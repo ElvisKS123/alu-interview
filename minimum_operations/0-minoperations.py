@@ -3,26 +3,28 @@
 Module for calculating minimum operations to reach n 'H' characters.
 """
 
+
 def minOperations(n):
     """
-    Calculate the minimum number of operations needed to result in exactly n 'H' characters.
-    
+    Calculate the minimum number of operations needed to result in exactly n 'H'
+    characters.
+
     Args:
         n (int): The target number of 'H' characters
-        
+
     Returns:
-        int: Minimum number of operations needed, or 0 if n is impossible to achieve
+        int: Minimum number of operations needed, or 0 if n is impossible
     """
     if n <= 1:
         return 0
-        
+
     operations = 0
     divisor = 2
-    
+
     while n > 1:
         while n % divisor == 0:
             operations += divisor
             n = n // divisor
         divisor += 1
-    
+
     return operations
